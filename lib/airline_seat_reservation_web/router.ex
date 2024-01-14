@@ -18,6 +18,10 @@ defmodule AirlineSeatReservationWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :home
+    get "/allSeats", PageController, :allSeats
+    post "/book", PageController, :book
+    post "/unbook", PageController, :unbook
+
   end
 
   # Other scopes may use custom stacks.
