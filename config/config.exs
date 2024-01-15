@@ -63,12 +63,6 @@ config :logger, :console,
 # Use Jason for JSON parsing in Phoenix
 config :phoenix, :json_library, Jason
 
-#MongoDB configuration
-config :airline_seat_reservation, AirlineSeatReservation.Repo,
-  adapter: Mongo.Ecto,
-  database: "airline_seat_reservation_database",
-  hostname: "localhost",
-  port: 27017
 
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.

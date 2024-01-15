@@ -17,6 +17,7 @@ defmodule AirlineSeatReservation.Application do
       # Start a worker by calling: AirlineSeatReservation.Worker.start_link(arg)
       # {AirlineSeatReservation.Worker, arg},
       # Start to serve requests, typically the last entry
+      AirlineSeatReservation.ClusterSupervisor,
       AirlineSeatReservationWeb.Endpoint
     ]
 

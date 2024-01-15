@@ -1,5 +1,14 @@
 import Config
 
+IO.puts("Loading runtime.exs")
+IO.inspect(System.get_env())
+#MongoDB configuration
+config :airline_seat_reservation, AirlineSeatReservation.Repo,
+adapter: Mongo.Ecto,
+database: System.fetch_env!("MONGODB"),
+hostname: System.fetch_env!("MONGOHOST"),
+port: String.to_integer(System.fetch_env!("MONGOPORT"))
+
 # config/runtime.exs is executed for all environments, including
 # during releases. It is executed after compilation and before the
 # system starts, so it is typically used to load production configuration
@@ -35,6 +44,7 @@ if config_env() == :prod do
 
   host = System.get_env("PHX_HOST") || "example.com"
   port = String.to_integer(System.get_env("PORT") || "4000")
+
 
   config :airline_seat_reservation, :dns_cluster_query, System.get_env("DNS_CLUSTER_QUERY")
 
